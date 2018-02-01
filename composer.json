@@ -42,7 +42,7 @@
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
             "yii\\composer\\Installer::postInstall",
-            "zcore\\composer\\Installer::postSetNamespace --colors=always"
+            "zcore\\composer\\Installer::postSetNamespace"
         ]
     },
     "extra": {
