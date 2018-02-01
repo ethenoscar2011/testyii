@@ -40,9 +40,7 @@
         ],
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
-            "yii\\composer\\Installer::postInstall"
-        ],
-        "set-namespace" : [
+            "yii\\composer\\Installer::postInstall",
             "@php setNamespace.php"
         ]
     },
