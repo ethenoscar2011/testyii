@@ -9,3 +9,4 @@
  */
 
 echo "This is just a test!\n";
+echo getcwd(),"\n";
