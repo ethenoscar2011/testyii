@@ -41,7 +41,7 @@
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
             "yii\\composer\\Installer::postInstall",
-            "@php setNamespace.php"
+            "zcore\\composer\\Installer::postSetNamespace"
         ]
     },
     "extra": {
@@ -64,6 +64,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/ethenoscar2011/zcore.git"
         }
     ]
 }
