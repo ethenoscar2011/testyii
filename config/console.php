@@ -4,13 +4,16 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic-console',
+    'id' => '##PROJECT_NAMESPACE##-console',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'controllerNamespace' => 'app\commands',
+    'controllerNamespace' => '##PROJECT_NAMESPACE##\commands',
+    'timeZone' => 'PRC',
+    'vendorPath' => YIICORE_APP_VENDOR_PATH,
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@##PROJECT_NAMESPACE##' => dirname(__DIR__)
     ],
     'components' => [
         'cache' => [
