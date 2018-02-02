@@ -6,11 +6,14 @@ $db = require __DIR__ . '/test_db.php';
  * Application configuration shared by all test types
  */
 return [
-    'id' => 'basic-tests',
+    'id' => '##PROJECT_NAMESPACE##-tests',
+    'timeZone' => 'PRC',
     'basePath' => dirname(__DIR__),
+    'controllerNamespace' => '##PROJECT_NAMESPACE##\controllers',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@##PROJECT_NAMESPACE##' => dirname(__DIR__)
     ],
     'language' => 'en-US',
     'components' => [
@@ -25,7 +28,7 @@ return [
             'showScriptName' => true,
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => '##PROJECT_NAMESPACE##\models\User',
         ],
         'request' => [
             'cookieValidationKey' => 'test',

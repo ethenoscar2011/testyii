@@ -4,13 +4,16 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic',
+    'id' => '##PROJECT_NAMESPACE##',
+    'timeZone' => 'PRC',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@##PROJECT_NAMESPACE##' => dirname(__DIR__)
     ],
+    'controllerNamespace' => '##PROJECT_NAMESPACE##\controllers',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -20,7 +23,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => '##PROJECT_NAMESPACE##\models\User',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
