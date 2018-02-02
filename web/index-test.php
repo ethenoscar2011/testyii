@@ -10,8 +10,8 @@ require_once __DIR__ . '/../yiiLoader.php';
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'test');
 
-require YIICORE_APP_VENDOR_PATH . 'autoload.php';
-require YIICORE_APP_VENDOR_PATH . 'yiisoft/yii2/Yii.php';
+require YIICORE_APP_VENDOR_PATH . '/autoload.php';
+require YIICORE_APP_VENDOR_PATH . '/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/../config/test.php';
 
