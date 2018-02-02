@@ -18,6 +18,14 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
+            'apiAuth' => [
+                'class' => ZcoreApiAuthFilter::className(),
+                'only' => ['api-test']
+            ],
+            'backendAuth' => [
+                'class' => ZcoreLoginAuthFilter::className(),
+                'only' => ['backend-test']
+            ],
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
@@ -53,6 +61,35 @@ class SiteController extends Controller
             ],
         ];
     }
+
+    /**
+     * 本地临时登录.
+     */
+    public function actionLocalLogin()
+    {
+        Yii::$app->response->cookies->add(new \yii\web\Cookie([
+            'name' => '_cpan',
+            'value' => 'lugui',
+            'expire' => time() + 86400
+        ]));
+    }
+
+    /**
+     * 进行api验证提醒.
+     */
+    public function actionApiTest()
+    {
+        echo "Test api auth";
+    }
+
+    /**
+     * 进行后台验证.
+     */
+    public function actionBackendTest()
+    {
+        echo "Test backend auth";
+    }
+
 
     /**
      * Displays homepage.
