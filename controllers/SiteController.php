@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use ##PROJECT_NAMESPACE##\models\LoginForm;
 use ##PROJECT_NAMESPACE##\models\ContactForm;
+use zcore\filters\ZcoreApiAuthFilter;
+use zcore\filters\ZcoreLoginAuthFilter;
 
 class SiteController extends Controller
 {
