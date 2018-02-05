@@ -42,7 +42,8 @@
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
             "yii\\composer\\Installer::postInstall",
-            "zcore\\composer\\Installer::postSetNamespace"
+            "zcore\\composer\\Installer::postSetNamespace",
+            "zcore\\composer\\Installer::createLocalConfig"
         ]
     },
     "extra": {
