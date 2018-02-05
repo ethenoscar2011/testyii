@@ -1,0 +1,50 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 说明：该文件用来统一管理项目关键配置信息的
+; 下面暂时只包含mysql和mongodb的配置项目，后期根据需要添加处理
+; 配置项目的server_id只针对测试环境和正式环境生效
+; 本地开发，请复制config.ini到config-local.ini中并取消非server_id的配置注释
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 公用的所有Mysql设置，如果没有配置对应项目独立的Mysql，
+; 则统一使用下面公用配置进行构造Mysql链接.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[Mysql]
+master.host = 127.0.0.1
+master.port = 3306
+master.user = root
+master.pwd = root
+;enable_slave = 1
+;slave.server_id = 6000
+;slave.host = 127.0.0.1
+;slave.port = 3306
+;slave.user = root
+;slave.pwd = root
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 针对不同项目有不同Mysql配置的，参考如下配置，配置名为：
+; Mysql-项目名字首字母大写
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[Mysql-Datacenter]
+master.host = 127.0.0.1
+master.port = 3306
+master.user = root
+master.pwd = root
+; 请注意线上是不会给配置独立的dbname的，只有本地环境方便使用gii才给指定dbname
+master.dbname = zuzuche_datacenter_db
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 公用的所有MongoDb设置，如果没有配置对应项目独立的MongoDb，
+; 则统一使用下面公用配置进行构造MongoDb链接.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[MongoDb]
+host = 127.0.0.1
+port = 27017
+user =
+pwd =
+
+[MongoDb-Datacenter]
+host = 127.0.0.1
+port = 27017
+user = root
+pwd = root
