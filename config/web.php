@@ -60,7 +60,15 @@ $config = [
     'params' => $params,
 ];
 
-if (YII_ENV_DEV) {
+if (
+    defined('YIICORE_DEBUG_SETTING_FILE')
+    && file_exists(YIICORE_DEBUG_SETTING_FILE)
+) {
+    $config = yii\helpers\ArrayHelper::merge(
+        $config,
+        require YIICORE_DEBUG_SETTING_FILE
+    );
+} else {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
@@ -75,16 +83,6 @@ if (YII_ENV_DEV) {
         // uncomment the following to add your IP if you are not connecting from localhost.
         'allowedIPs' => ['*'],
     ];
-}
-
-if (
-    defined('YIICORE_DEBUG_SETTING_FILE')
-    && file_exists(YIICORE_DEBUG_SETTING_FILE)
-) {
-    $config = yii\helpers\ArrayHelper::merge(
-        $config,
-        require YIICORE_DEBUG_SETTING_FILE
-    );
 }
 
 return $config;
