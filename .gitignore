@@ -34,3 +34,6 @@ tests/_support/_generated
 
 #local db conf
 config-local.ini
+
+#local browser test file
+/tests/acceptance.suite.yml
