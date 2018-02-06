@@ -9,8 +9,8 @@ if (
     && file_exists(YIICORE_COMMON_PARAMS_FILE)
 ) {
     $params = array_merge(
-        require YIICORE_COMMON_PARAMS_FILE,
-        $params
+        $params,
+        require YIICORE_COMMON_PARAMS_FILE
     );
 }
 return $params;
